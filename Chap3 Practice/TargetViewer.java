@@ -6,15 +6,15 @@ import javax.swing.JFrame;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class CarViewer
+public class TargetViewer
 {
     public static void main(String[] args)
     {
     
         JFrame frame = new JFrame();
         
-        frame.setSize(300, 400);
-        frame.setTitle("Two cars");
+        frame.setSize(400, 400);
+        frame.setTitle("A Target");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         TargetComponent component = new TargetComponent();
@@ -22,5 +22,4 @@ public class CarViewer
         
         frame.setVisible(true);
     }
-
 }
