@@ -4,8 +4,8 @@ public class AvgOfThree
 {
    public static void main (String[] args)
    {
-       Scanner s = new Scanner(System.in);
-       double a, b, c;
+      Scanner s = new Scanner(System.in);
+      double a, b, c;
 
       System.out.print ("Enter the first number: ");
       a = s.nextDouble();
