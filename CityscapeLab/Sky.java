@@ -3,7 +3,7 @@ import java.awt.Color;
 import java.awt.Rectangle;
 
 /**
- * A sky that transitions from day to night
+ * A blue sky that covers the entire screen
  * 
  * @author Yi Qiao
  * @version 3 October 2014

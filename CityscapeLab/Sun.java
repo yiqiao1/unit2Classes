@@ -1,22 +1,25 @@
+import java.awt.Graphics2D;
+import java.awt.Color;
+import java.awt.geom.Ellipse2D;
 
 /**
- * Write a description of class Sun here.
+ * A round yellow sun in the sky
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
 public class Sun
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
+    private int sunWidth;
+    private int sunHeight;
+    
     /**
      * Constructor for objects of class Sun
      */
-    public Sun()
+    public Sun(int sw, int sh)
     {
-        // initialise instance variables
-        x = 0;
+        sunWidth = sw;
+        sunHeight = sh;
     }
 
     /**
@@ -25,9 +28,11 @@ public class Sun
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    public int sampleMethod(int y)
+    public void draw(Graphics2D g2)
     {
-        // put your code here
-        return x + y;
+        Ellipse2D.Double sun = new Ellipse2D.Double(50, 50, sunWidth, sunHeight);
+        g2.setColor(Color.YELLOW);
+        g2.draw(sun);
+        g2.fill(sun);
     }
 }

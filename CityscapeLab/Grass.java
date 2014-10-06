@@ -11,18 +11,18 @@ import java.awt.Rectangle;
 public class Grass
 {
     /** description of instance variable x (add comment for each instance variable) */
-    private int xRight;
-    private int yBottom;
+    private int grassWidth;
+    private int grassHeight;
     private int yTop;
 
     /**
      * Default constructor for objects of class Grass
      */
-    public Grass(int x, int yt, int yb)
+    public Grass(int yt, int gw, int gh)
     {
-        xRight = x;
         yTop = yt;
-        yBottom = yb;
+        grassWidth = gw;
+        grassHeight = gh;
     }
 
     /**
@@ -32,7 +32,7 @@ public class Grass
      */
     public void draw(Graphics2D g2)
     {
-        Rectangle grass = new Rectangle(0, yTop, xRight, yBottom);
+        Rectangle grass = new Rectangle(0, yTop, grassWidth, grassHeight);
 
         g2.setColor(Color.GREEN);
         g2.draw(grass);

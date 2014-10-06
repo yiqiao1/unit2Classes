@@ -11,18 +11,24 @@ import java.awt.Rectangle;
 public class Road
 {
     /** description of instance variable x (add comment for each instance variable) */
-    private int xRight;
-    private int roadYBottom;
+    private int roadWidth;
+    private int roadHeight;
     private int roadYTop;
+    
+    private int lineYTop;
+    private int lineXRight;
 
     /**
      * Default constructor for objects of class Sky
      */
-    public Road(int yt, int x, int yb)
+    public Road(int ryt, int rw, int rh, int lyt, int lxr)
     {
-        xRight = x;
-        roadYTop = yt;
-        roadYBottom = yb;
+        roadYTop = ryt;
+        roadWidth = rw;
+        roadHeight = rh;
+        
+        lineYTop = lyt;
+        lineXRight = lxr;
     }
 
     /**
@@ -32,10 +38,19 @@ public class Road
      */
     public void draw(Graphics2D g2)
     {
-        Rectangle road = new Rectangle(0, roadYTop, xRight, roadYBottom);
+        Rectangle road = new Rectangle(0, roadYTop, roadWidth, roadHeight);
 
         g2.setColor(Color.BLACK);
         g2.draw(road);
         g2.fill(road);
+        
+        while (lineXRight > 0)
+        {
+            Rectangle line = new Rectangle(lineXRight, lineYTop, 20, 4);
+            g2.setColor(Color.YELLOW);
+            g2.draw(line);
+            g2.fill(line);
+            lineXRight = lineXRight - 40;
+        }
     }
 }
