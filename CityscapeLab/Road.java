@@ -3,40 +3,39 @@ import java.awt.Color;
 import java.awt.Rectangle;
 
 /**
- * A sky that transitions from day to night
+ * A road that runs across the grass
  * 
  * @author Yi Qiao
  * @version 3 October 2014
  */
-public class Sky
+public class Road
 {
     /** description of instance variable x (add comment for each instance variable) */
     private int xRight;
-    private int yBottom;
+    private int roadYBottom;
+    private int roadYTop;
 
     /**
      * Default constructor for objects of class Sky
      */
-    public Sky(int x, int y)
+    public Road(int yt, int x, int yb)
     {
         xRight = x;
-        yBottom = y;
+        roadYTop = yt;
+        roadYBottom = yb;
     }
 
     /**
-     * Draws the sky as a rectangle
+     * Draws the road as a rectangle
      *
      * @param    g2    the graphics context
      */
     public void draw(Graphics2D g2)
     {
-        Rectangle sky = new Rectangle(0, 0, xRight, yBottom);
-        Color color = new Color(135, 255, 255);
-        
-        g2.setColor(color);
-        g2.draw(sky);
-        g2.fill(sky);
+        Rectangle road = new Rectangle(0, roadYTop, xRight, roadYBottom);
+
+        g2.setColor(Color.BLACK);
+        g2.draw(road);
+        g2.fill(road);
     }
-    
-    
 }

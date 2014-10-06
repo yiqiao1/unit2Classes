@@ -3,39 +3,40 @@ import java.awt.Color;
 import java.awt.Rectangle;
 
 /**
- * A sky that transitions from day to night
+ * Green grass on the ground?
  * 
  * @author Yi Qiao
  * @version 3 October 2014
  */
-public class Sky
+public class Grass
 {
     /** description of instance variable x (add comment for each instance variable) */
     private int xRight;
     private int yBottom;
+    private int yTop;
 
     /**
-     * Default constructor for objects of class Sky
+     * Default constructor for objects of class Grass
      */
-    public Sky(int x, int y)
+    public Grass(int x, int yt, int yb)
     {
         xRight = x;
-        yBottom = y;
+        yTop = yt;
+        yBottom = yb;
     }
 
     /**
-     * Draws the sky as a rectangle
+     * Draws the grass as a rectangle
      *
      * @param    g2    the graphics context
      */
     public void draw(Graphics2D g2)
     {
-        Rectangle sky = new Rectangle(0, 0, xRight, yBottom);
-        Color color = new Color(135, 255, 255);
-        
-        g2.setColor(color);
-        g2.draw(sky);
-        g2.fill(sky);
+        Rectangle grass = new Rectangle(0, yTop, xRight, yBottom);
+
+        g2.setColor(Color.GREEN);
+        g2.draw(grass);
+        g2.fill(grass);
     }
     
     
