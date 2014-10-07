@@ -31,7 +31,7 @@ public class Sky
     public void draw(Graphics2D g2)
     {
         Rectangle sky = new Rectangle(0, 0, xRight, yBottom);
-        Color color = new Color(135, 255, 255);
+        Color color = new Color(0, 0, 102);
         
         g2.setColor(color);
         g2.draw(sky);

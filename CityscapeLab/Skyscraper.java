@@ -1,3 +1,6 @@
+import java.awt.Graphics2D;
+import java.awt.Color;
+import java.awt.Rectangle;
 
 /**
  * Write a description of class Skyscraper here.
@@ -8,15 +11,22 @@
 public class Skyscraper
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private int scraperXRight;
+    private int scraperYTop;
+    private int scraperWidth;
+    private int scraperHeight;
+    private int frameWidth;
+    private int grassYTop;
 
     /**
      * Constructor for objects of class Skyscraper
      */
-    public Skyscraper()
+    public Skyscraper(int x, int gyt, int ssyt, int ssw)
     {
-        // initialise instance variables
-        x = 0;
+        frameWidth = x;
+        grassYTop = gyt;
+        scraperYTop = ssyt;
+        scraperWidth = ssw;
     }
 
     /**
@@ -25,9 +35,18 @@ public class Skyscraper
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    public int sampleMethod(int y)
+    public void draw(Graphics2D g2)
     {
-        // put your code here
-        return x + y;
+        scraperXRight = frameWidth - scraperWidth;
+        scraperHeight = grassYTop - scraperYTop;
+        
+        while (scraperXRight > 0)
+        {
+            Rectangle skyscraper = new Rectangle(scraperXRight, scraperYTop, scraperWidth, scraperHeight);
+            g2.setColor(Color.GRAY);
+            g2.draw(skyscraper);
+            g2.fill(skyscraper);
+            scraperXRight = scraperXRight - 160;
+        }
     }
 }

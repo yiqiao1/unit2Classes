@@ -33,8 +33,9 @@ public class Grass
     public void draw(Graphics2D g2)
     {
         Rectangle grass = new Rectangle(0, yTop, grassWidth, grassHeight);
+        Color color = new Color(0, 204, 0);
 
-        g2.setColor(Color.GREEN);
+        g2.setColor(color);
         g2.draw(grass);
         g2.fill(grass);
     }

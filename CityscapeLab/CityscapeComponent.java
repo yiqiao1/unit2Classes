@@ -1,6 +1,7 @@
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JComponent;
+import java.util.Random;
 
 /**
  * Class that creates instances of the classes that comprise the cityscape and delegates drawing the
@@ -20,8 +21,8 @@ public class CityscapeComponent extends JComponent
         Sky sky = new Sky(x, yb);
         sky.draw(g2);
         
-        int yt = 3*(getHeight()/5);
-        Grass grass = new Grass(yt, x, yb);
+        int gyt = 3*(getHeight()/5);
+        Grass grass = new Grass(gyt, x, yb);
         grass.draw(g2);
         
         int ryt = 7*(getHeight()/10);
@@ -31,10 +32,17 @@ public class CityscapeComponent extends JComponent
         Road road = new Road(ryt, x, rh, lyt, lxr);
         road.draw(g2);
         
-        int sw = 1*(getWidth()/10);
-        int sh = sw;
-        Sun sun = new Sun(sw, sh);
-        sun.draw(g2);
+        int mw = 1*(getWidth()/9);
+        int mh = mw;
+        Moon moon = new Moon(mw, mh);
+        moon.draw(g2);
+        
+        Random num = new Random();
+        int ssyt = num.nextInt(201) + 60;
+        int ssw = num.nextInt(101) + 50;
+        Skyscraper skyscraper = new Skyscraper(x, gyt, ssyt, ssw);
+        skyscraper.draw(g2);
+        
     }
     }
 
