@@ -66,7 +66,13 @@ public class Skyscraper
         // while the X-coordinate of the top left corner of the leftmost skyscraper is not equal or less than 0
         {
             Rectangle skyscraper = new Rectangle(scraperXRight, scraperYTop, scraperWidth, scraperHeight);
-            g2.setColor(Color.GRAY);
+            Random colorGenerator = new Random();
+            int red = colorGenerator.nextInt(256);
+            int green = colorGenerator.nextInt(256);
+            int blue = colorGenerator.nextInt(256);
+            Color color = new Color(red, green, blue);
+            
+            g2.setColor(color);
             g2.draw(skyscraper);
             g2.fill(skyscraper);
             
