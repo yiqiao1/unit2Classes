@@ -3,10 +3,10 @@ import java.awt.Color;
 import java.awt.geom.Ellipse2D;
 
 /**
- * A round yellow moon in the sky
+ * A round yellow moon in the upper-left corner of the sky
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Yi Qiao 
+ * @version 5 October 2014
  */
 public class Moon
 {
@@ -23,10 +23,9 @@ public class Moon
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Draws the moon as a circular ellipse and fills it in with a white-yellow color
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param  g2   the graphics context
      */
     public void draw(Graphics2D g2)
     {

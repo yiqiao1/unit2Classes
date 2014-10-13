@@ -3,16 +3,18 @@ import java.awt.Color;
 import java.awt.Rectangle;
 
 /**
- * Green grass on the ground?
+ * Green grass that covers the bottom 2/5 of the frame
  * 
  * @author Yi Qiao
  * @version 3 October 2014
  */
 public class Grass
 {
-    /** description of instance variable x (add comment for each instance variable) */
+    /** Width of the grass which equals the width of the frame */
     private int grassWidth;
+    /** Height of the grass which equals 2/5 of the height of the frame */
     private int grassHeight;
+    /** Y-coordinate of the top left corner of the grass */
     private int yTop;
 
     /**
@@ -26,7 +28,7 @@ public class Grass
     }
 
     /**
-     * Draws the grass as a rectangle
+     * Draws the grass as a rectangle and fills it in with a green color
      *
      * @param    g2    the graphics context
      */

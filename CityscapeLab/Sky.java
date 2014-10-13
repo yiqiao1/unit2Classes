@@ -3,15 +3,16 @@ import java.awt.Color;
 import java.awt.Rectangle;
 
 /**
- * A blue sky that covers the entire screen
+ * A blue night sky that covers the entire screen
  * 
  * @author Yi Qiao
  * @version 3 October 2014
  */
 public class Sky
 {
-    /** description of instance variable x (add comment for each instance variable) */
+    /** Width of the sky which equals the width of the frame*/
     private int xRight;
+    /** Height of the sky which equals the height of the frame*/ 
     private int yBottom;
 
     /**
@@ -24,7 +25,7 @@ public class Sky
     }
 
     /**
-     * Draws the sky as a rectangle
+     * Draws the sky as a rectangle and fills it in with a dark blue color
      *
      * @param    g2    the graphics context
      */
@@ -37,6 +38,4 @@ public class Sky
         g2.draw(sky);
         g2.fill(sky);
     }
-    
-    
 }
