@@ -26,15 +26,7 @@ public class CityscapeComponent extends JComponent
         Grass grass = new Grass(GrassYTop, frameWidth, frameHeight);
         grass.draw(g2);
         
-        // Y-coordinate of top left corner of road is 7/10 of the way down the frame
-        int roadYTop = 7*(getHeight()/10);
-        // Road height is 1/5 height of frame
-        int roadHeight = 1*(getHeight()/5);
-        // Y-coordinate of top left corner of perforated line is 4/5 of the way down the frame
-        int lineYTop = 4*(getHeight()/5);
-        // X-coordinate of top left corner of left-most line segment is 20 pixels away from right edge of frame
-        int lineXRight = getWidth() - 20;
-        Road road = new Road(roadYTop, frameWidth, roadHeight, lineYTop, lineXRight);
+        Road road = new Road(frameWidth, frameHeight);
         road.draw(g2);
         
         // Moon width is 1/9 width of frame

@@ -25,14 +25,18 @@ public class Road
     /**
      * Default constructor for objects of class Sky
      */
-    public Road(int ryt, int rw, int rh, int lyt, int lxr)
+    public Road(int frameWidth, int frameHeight)
     {
-        roadYTop = ryt;
-        roadWidth = rw;
-        roadHeight = rh;
-        
-        lineYTop = lyt;
-        lineXRight = lxr;
+        // Road width is equal to frame width
+        roadWidth = frameWidth;
+        // Y-coordinate of top left corner of road is 7/10 of the way down the frame
+        roadYTop = 7*(frameHeight/10);
+        // Road height is 1/5 height of frame
+        roadHeight = 1*(frameHeight/5);
+        // Y-coordinate of top left corner of perforated line is 4/5 of the way down the frame
+        lineYTop = 4*(frameHeight/5);
+        // X-coordinate of top left corner of left-most line segment is 20 pixels away from right edge of frame
+        lineXRight = frameWidth - 20;
     }
 
     /**
