@@ -16,10 +16,12 @@ public class Moon
     /**
      * Constructor for objects of class moon
      */
-    public Moon(int mw, int mh)
+    public Moon(int frameWidth)
     {
-        moonWidth = mw;
-        moonHeight = mh;
+        // Moon width is 1/9 width of frame
+        moonWidth = 1*(frameWidth/9);
+        // Moon height is equal to moon width so moon will be circle
+        moonHeight = moonWidth;
     }
 
     /**
@@ -29,7 +31,7 @@ public class Moon
      */
     public void draw(Graphics2D g2)
     {
-        Ellipse2D.Double moon = new Ellipse2D.Double(30, 30, moonWidth, moonHeight);
+        Ellipse2D.Double moon = new Ellipse2D.Double(40, 40, moonWidth, moonHeight);
         Color color = new Color(255, 255, 247);
         
         g2.setColor(color);

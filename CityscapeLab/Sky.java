@@ -11,17 +11,17 @@ import java.awt.Rectangle;
 public class Sky
 {
     /** Width of the sky which equals the width of the frame*/
-    private int xRight;
+    private int skyXRight;
     /** Height of the sky which equals the height of the frame*/ 
-    private int yBottom;
+    private int skyYBottom;
 
     /**
      * Default constructor for objects of class Sky
      */
-    public Sky(int x, int y)
+    public Sky(int frameWidth, int frameHeight)
     {
-        xRight = x;
-        yBottom = y;
+        skyXRight = frameWidth;
+        skyYBottom = frameHeight;
     }
 
     /**
@@ -31,7 +31,7 @@ public class Sky
      */
     public void draw(Graphics2D g2)
     {
-        Rectangle sky = new Rectangle(0, 0, xRight, yBottom);
+        Rectangle sky = new Rectangle(0, 0, skyXRight, skyYBottom);
         Color color = new Color(0, 0, 102);
         
         g2.setColor(color);

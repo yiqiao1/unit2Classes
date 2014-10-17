@@ -36,10 +36,10 @@ public class Skyscraper
      * @param  x   the width of the frame in pixels
      * @param  gyt   the Y-coordinate of the top left corner of the grass
      */
-    public Skyscraper(int x, int gyt)
+    public Skyscraper(int frameWidth, int frameHeight)
     {
-        frameWidth = x;
-        grassYTop = gyt;      
+        this.frameWidth = frameWidth;
+        grassYTop = 3*(frameHeight/5);     
     }
 
     /**
@@ -59,7 +59,7 @@ public class Skyscraper
         // so that there will always be a skyscraper 20 pixels away from the right side of the frame 
         scraperXRight = frameWidth - scraperWidth - 20;
         // Sets the height of the skyscraper so that it will always extend all the way down to the top of the grass
-        scraperHeight = grassYTop - scraperYTop;
+        scraperHeight = grassYTop - scraperYTop - 1;
         
         while (scraperXRight > 0)
         // Starts with a skyscraper at the right of the frame and keeps adding more skyscrapers to the left 
@@ -98,6 +98,7 @@ public class Skyscraper
                 Rectangle window3 = new Rectangle(windowXRightL, windowYTop, 15, 15);
                 // The uppermost window to the left of the middle of the skyscraper
                 Rectangle window4 = new Rectangle(windowXRightR, windowYTop, 15, 15);
+
                 g2.setColor(Color.YELLOW);
                 g2.draw(window3);
                 g2.fill(window3);
@@ -126,6 +127,7 @@ public class Skyscraper
                     
                     Rectangle window1 = new Rectangle(windowXRightL, windowYTop, 15, 15);
                     Rectangle window2 = new Rectangle(windowXRightR, windowYTop, 15, 15);
+                    
                     g2.setColor(Color.YELLOW);
                     g2.draw(window1);
                     g2.fill(window1);
@@ -150,7 +152,7 @@ public class Skyscraper
             // Generates new values for skyscraper's width and height to randomize skyscrapers
             scraperYTop = num.nextInt(201) + 60;
             scraperWidth = num.nextInt(101) + 50;
-            scraperHeight = grassYTop - scraperYTop;
+            scraperHeight = grassYTop - scraperYTop - 1;
         }
     }
 }

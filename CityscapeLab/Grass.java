@@ -15,16 +15,17 @@ public class Grass
     /** Height of the grass which equals 2/5 of the height of the frame */
     private int grassHeight;
     /** Y-coordinate of the top left corner of the grass */
-    private int yTop;
+    private int grassYTop;
 
     /**
      * Default constructor for objects of class Grass
      */
-    public Grass(int yt, int gw, int gh)
+    public Grass(int frameWidth, int frameHeight)
     {
-        yTop = yt;
-        grassWidth = gw;
-        grassHeight = gh;
+        // Y-coordinate of top left corner of grass is 3/5 down the frame
+        grassYTop = 3*(frameHeight/5);
+        grassWidth = frameWidth;
+        grassHeight = frameHeight;
     }
 
     /**
@@ -34,7 +35,7 @@ public class Grass
      */
     public void draw(Graphics2D g2)
     {
-        Rectangle grass = new Rectangle(0, yTop, grassWidth, grassHeight);
+        Rectangle grass = new Rectangle(0, grassYTop, grassWidth, grassHeight);
         Color color = new Color(0, 204, 0);
 
         g2.setColor(color);

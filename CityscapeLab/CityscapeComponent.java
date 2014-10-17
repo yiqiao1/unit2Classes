@@ -18,24 +18,19 @@ public class CityscapeComponent extends JComponent
         
         int frameWidth = getWidth();
         int frameHeight = getHeight();
+        
         Sky sky = new Sky(frameWidth, frameHeight);
         sky.draw(g2);
         
-        // Y-coordinate of top left corner of grass is 3/5 down the frame
-        int GrassYTop = 3*(getHeight()/5);
-        Grass grass = new Grass(GrassYTop, frameWidth, frameHeight);
+        Moon moon = new Moon(frameWidth);
+        moon.draw(g2);
+        
+        Grass grass = new Grass(frameWidth, frameHeight);
         grass.draw(g2);
         
         Road road = new Road(frameWidth, frameHeight);
         road.draw(g2);
-        
-        // Moon width is 1/9 width of frame
-        int moonWidth = 1*(getWidth()/9);
-        // Moon height is equal to moon width so moon will be circle
-        int moonHeight = moonWidth;
-        Moon moon = new Moon(moonWidth, moonHeight);
-        moon.draw(g2);
-        
+
         Random num = new Random();
         int count = 0;
         while (count < (frameWidth/2))
@@ -44,7 +39,7 @@ public class CityscapeComponent extends JComponent
             // X-coordinate of star random number between 0 and frame width - 1
             int starX = num.nextInt(frameWidth);
             // Y-coordinate of star random number between 0 and top of grass - 1
-            int starY = num.nextInt(GrassYTop);
+            int starY = num.nextInt(3*(frameHeight/5));
             
             Star star = new Star(starX, starY);
             star.draw(g2);
@@ -52,7 +47,7 @@ public class CityscapeComponent extends JComponent
             count++;
         }
         
-        Skyscraper skyscraper = new Skyscraper(frameWidth, GrassYTop);
+        Skyscraper skyscraper = new Skyscraper(frameWidth, frameHeight);
         skyscraper.draw(g2);
     }
 }
